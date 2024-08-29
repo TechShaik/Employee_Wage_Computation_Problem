@@ -23,6 +23,7 @@ public class Emp_mian {
              System.out.println("Select operation:");
              System.out.println("Enter 1 to see attendence");
              System.out.println("enter 2 to check a employee is present or not");
+             System.out.println("enter 3 to caluclate daily wage of any employee");
              System.out.println("Enter 0 to exit");
 
                 int choice=sc.nextInt();
@@ -42,8 +43,15 @@ public class Emp_mian {
             		 System.out.println(emp+" is Present");
             	 }else {
             		 System.out.println(emp+" is Absent");
-
             	 }
+            	 break;
+             case 3:
+            	 int per_hr=20; int hrs=8;
+            	 System.out.println("Enter the name of the employee");
+            	 String emp1=sc.next();
+             	 float wage=per_hr*hrs;
+             	 System.out.println(emp1+" wage is: "+wage);
+            	 
              }
              }}
                    
