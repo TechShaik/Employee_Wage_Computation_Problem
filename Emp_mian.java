@@ -35,6 +35,7 @@ public class Emp_mian {
                     System.out.println("Enter 1 to see attendance");
                     System.out.println("Enter 2 to check if an employee is present or not");
                     System.out.println("Enter 3 to calculate the daily wage of an employee");
+                    System.out.println("Enter 4 to calculate the daily monthly of an employee");
                     System.out.println("Enter 0 to exit");
 
                     int choice = sc.nextInt();
@@ -63,6 +64,16 @@ public class Emp_mian {
                                 float wage = per_hr * hrs;
                                 System.out.println(emp1 + " wage is: " + wage);
                                 break;
+                            case 4:
+                            	 int per_hrs = 20;
+                                 int hr = 8;
+                                 int days=20;
+                                 System.out.println("Enter the name of the employee:");
+                                 String empp = sc.next();
+                                 float wages = per_hrs * hr*days;
+                                 System.out.println(empp + " wage is: " + wages);
+                                 break;
+                            	
                         }
                     }
                 }
@@ -83,18 +94,39 @@ public class Emp_mian {
                 System.out.println("Press yes to calculate part-time employee wage:");
                 String n = sc.next();
                 
-                if (n.equalsIgnoreCase("yes")) {
-                	System.out.println("Enter the Employee name : ");
-                	String nm=sc.next();
-                         int pr = 18;
-                        int hr = 4; 
-                        float wage = pr * hr;
-                        System.out.println(nm + " wage is: " + wage);
-                    }else {
-                    	System.out.println("Data inserted");
-                    }
-                }
-     }
+                if (n.equalsIgnoreCase("yes")) { 
+                	while(true) {
+                	System.out.println("Enter wage type 1 for daily-wage 2 for monthly-wage and 0 to exit");
+                	int m=sc.nextInt();
+                	if(m==0) {
+                		sc.close();
+                		break;
+                	}else {
+                	switch(m) {
+                	case 1:
+
+                    	System.out.println("Enter the Employee name : ");
+                    	String nm=sc.next();
+                             int pr = 18;
+                            int hr = 4; 
+                            float wage = pr * hr;
+                            System.out.println(nm + " wage is: " + wage);
+                           break;
+                	case 2:
+                		int per_hrs = 20;
+                        int hrss = 8;
+                        int days=20;
+                        System.out.println("Enter the name of the employee:");
+                        String empp = sc.next();
+                        float wages = per_hrs * hrss*days;
+                        System.out.println(empp + " wage is: " + wages);
+                        break;
+                       
+                	}
+                        } 
+                           }}else {
+                           	System.out.println("Data inserted");
+                          }}}
                            // Methods start here
     public static void seeAttendence() {
         System.out.println("Employees present today are: " + Attendence);
