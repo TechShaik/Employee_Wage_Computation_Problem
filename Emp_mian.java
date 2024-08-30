@@ -37,6 +37,7 @@ public class Emp_mian {
                     System.out.println("Enter 3 to calculate the daily wage of an employee");
                     System.out.println("Enter 4 to calculate the daily monthly of an employee");
                     System.out.println("Enter 5 to calculate the wage till to a condition reach");
+                    System.out.println("Enter 6 to caluclate wage by method");
                     System.out.println("Enter 0 to exit");
 
                     int choice = sc.nextInt();
@@ -104,6 +105,10 @@ public class Emp_mian {
 
                             	System.out.println("Total Wages: $" + totalWages);
                                  break;
+                            case 6:
+                            	methods m=new methods();
+                            	m.emp_wage();
+                            	
                             	
                         }
                     }
@@ -190,4 +195,27 @@ public class Emp_mian {
     public static void seeAttendence() {
         System.out.println("Employees present today are: " + Attendence);
     }
+    
+   
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
 }
