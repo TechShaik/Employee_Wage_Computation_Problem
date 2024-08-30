@@ -36,6 +36,7 @@ public class Emp_mian {
                     System.out.println("Enter 2 to check if an employee is present or not");
                     System.out.println("Enter 3 to calculate the daily wage of an employee");
                     System.out.println("Enter 4 to calculate the daily monthly of an employee");
+                    System.out.println("Enter 5 to calculate the wage till to a condition reach");
                     System.out.println("Enter 0 to exit");
 
                     int choice = sc.nextInt();
@@ -46,16 +47,20 @@ public class Emp_mian {
                         switch (choice) {
                             case 1:
                                 seeAttendence();
+                                System.out.println();
                                 break;
                             case 2:
                                 System.out.println("Enter employee name:");
                                 String emp = sc.next();
                                 if (Attendence.contains(emp)) {
                                     System.out.println(emp + " is Present");
+                    		        System.out.println();
+
                                 } else {
                                     System.out.println(emp + " is Absent");
-                                }
-                                break;
+                    		        System.out.println();
+                                         }
+                                        break;
                             case 3:
                                 int per_hr = 20;
                                 int hrs = 8;
@@ -63,7 +68,9 @@ public class Emp_mian {
                                 String emp1 = sc.next();
                                 float wage = per_hr * hrs;
                                 System.out.println(emp1 + " wage is: " + wage);
+                		        System.out.println();
                                 break;
+                                
                             case 4:
                             	 int per_hrs = 20;
                                  int hr = 8;
@@ -72,6 +79,30 @@ public class Emp_mian {
                                  String empp = sc.next();
                                  float wages = per_hrs * hr*days;
                                  System.out.println(empp + " wage is: " + wages);
+                 		        System.out.println();
+                                 break;
+                                 
+                            case 5:
+                            	int totalWorkingHours = 0;
+                            	int totalWorkingDays = 0;
+                            	int wagePerHour = 15;
+                            	int dailyWorkHours = 8;
+                            	int totalWages = 0;
+
+                            	while(totalWorkingHours < 100 && totalWorkingDays < 20) {
+                            	    totalWorkingDays++;
+                            	    if(totalWorkingHours + dailyWorkHours > 100) {
+                            	        // Calculate the hours needed to reach 100 hours
+                            	        int remainingHours = 100 - totalWorkingHours;
+                            	        totalWorkingHours += remainingHours;
+                            	        totalWages += remainingHours * wagePerHour;
+                            	    } else {
+                            	        totalWorkingHours += dailyWorkHours;
+                            	        totalWages += dailyWorkHours * wagePerHour;
+                            	    }
+                            	}
+
+                            	System.out.println("Total Wages: $" + totalWages);
                                  break;
                             	
                         }
@@ -96,7 +127,8 @@ public class Emp_mian {
                 
                 if (n.equalsIgnoreCase("yes")) { 
                 	while(true) {
-                	System.out.println("Enter wage type 1 for daily-wage 2 for monthly-wage and 0 to exit");
+                	System.out.println("Select 1 for daily-wage 2 for monthly-wage and 0 to exit");
+                    System.out.println("Enter 3 to calculate the wage till to a condition reach");
                 	int m=sc.nextInt();
                 	if(m==0) {
                 		sc.close();
@@ -111,6 +143,7 @@ public class Emp_mian {
                             int hr = 4; 
                             float wage = pr * hr;
                             System.out.println(nm + " wage is: " + wage);
+                            System.out.println();
                            break;
                 	case 2:
                 		int per_hrs = 20;
@@ -120,7 +153,33 @@ public class Emp_mian {
                         String empp = sc.next();
                         float wages = per_hrs * hrss*days;
                         System.out.println(empp + " wage is: " + wages);
+                        System.out.println();
                         break;
+                	case 3:
+                		int totalWorkingHours = 0;
+                		int totalWorkingDays = 0;
+                		int wagePerHour = 15;
+                		int dailyWorkHours = 8;
+                		int totalWages = 0;
+
+                		while(totalWorkingHours < 100 && totalWorkingDays < 20) {
+                		    totalWorkingDays++;
+                		    if(totalWorkingHours + dailyWorkHours > 100) {
+                		        // Calculate the hours needed to reach 100 hours
+                		        int remainingHours = 100 - totalWorkingHours;
+                		        totalWorkingHours += remainingHours;
+                		        totalWages += remainingHours * wagePerHour;
+                		        System.out.println();
+                		    } else {
+                		        totalWorkingHours += dailyWorkHours;
+                		        totalWages += dailyWorkHours * wagePerHour;
+                		        System.out.println();
+                		    }
+                		}
+
+                		System.out.println("Total Wages: $" + totalWages);
+                		System.out.println();
+
                        
                 	}
                         } 
