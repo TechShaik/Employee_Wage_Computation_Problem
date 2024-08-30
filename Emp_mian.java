@@ -38,6 +38,7 @@ public class Emp_mian {
                     System.out.println("Enter 4 to calculate the daily monthly of an employee");
                     System.out.println("Enter 5 to calculate the wage till to a condition reach");
                     System.out.println("Enter 6 to caluclate wage by method");
+                    System.out.println("Enter 7 to caluclate wage for different company");
                     System.out.println("Enter 0 to exit");
 
                     int choice = sc.nextInt();
@@ -108,8 +109,33 @@ public class Emp_mian {
                             case 6:
                             	methods m=new methods();
                             	m.emp_wage();
-                            	
-                            	
+                            	break;
+                            case 7:
+                            	companies c=new companies();
+                            	while(true) {
+                            	System.out.println("Select company");
+                            	System.out.println("1 for TCS");
+                            	System.out.println("2 for Apexon");
+                            	System.out.println("3 for HCL");
+                            	int com=sc.nextInt();
+                            	if(com==0) {
+                            		System.out.println();
+                             		break;
+                             		
+                            	}else {
+                            		switch(com) {
+                            		case 1:
+                            			c.tcs();
+                            			break;
+                            		case 2:
+                            			c.apexon();
+                            			break;
+                            		case 3:
+                            			c.hcl();                            		}
+                            	}
+
+
+                            	}
                         }
                     }
                 }
@@ -188,10 +214,13 @@ public class Emp_mian {
                        
                 	}
                         } 
-                           }}else {
+                           }
+                	}else {
                            	System.out.println("Data inserted");
-                          }}}
-                           // Methods start here
+                          }
+                }
+        }
+                               // Methods start here
     public static void seeAttendence() {
         System.out.println("Employees present today are: " + Attendence);
     }
